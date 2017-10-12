@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 import {Route} from 'react-router-dom'
+import AllPostsPage from "./components/AllPostsPage";
 
 class App extends Component {
   render() {
     return (
       <div>
         <Route path="/" exact render={ () =>
-          <div>
-            In main route
-          </div>
+          <AllPostsPage/>
         }/>
         <Route path="/category/:categoryName" render={ (props) =>
           <div>

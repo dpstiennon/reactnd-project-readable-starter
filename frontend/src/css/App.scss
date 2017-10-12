@@ -22,6 +22,21 @@
   font-size: large;
 }
 
+.category-link {
+  display: inline-block;
+  border-radius: 5px;
+  margin: 10px 5px 0 5px;
+  padding: 5px 10px 5px 10px;
+  height: 20px;
+  color: antiquewhite;
+  background-color: aqua;
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
