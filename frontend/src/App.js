@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import {Route} from 'react-router-dom'
 import AllPostsPage from "./components/AllPostsPage";
+import PostEditor from "./components/PostEditor";
 
 class App extends Component {
   render() {
@@ -17,9 +18,7 @@ class App extends Component {
           </div>
         } />
         <Route path="/editor/:id?" render={(props) =>
-          <div>
-            In editor {props.match.params.id}
-          </div>
+          <PostEditor></PostEditor>
         }/>
         <Route path="/post/:id" render={(props) =>
           <div>
