@@ -35,7 +35,7 @@ const posts = [
 ];
 
 
-function reducer(state = posts, action){
+const reducer = (state = posts, action) =>{
   switch(action.type){
     case actions.SAVE_POST:
       const {post} = action;
@@ -47,4 +47,6 @@ function reducer(state = posts, action){
       return state;
 
   }
-}
+};
+
+export default reducer;
