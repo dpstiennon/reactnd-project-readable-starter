@@ -11,18 +11,18 @@ class App extends Component {
         <Route path="/" exact render={ (props) =>
           <AllPostsPage history={props.history}/>
         }/>
-        <Route path="/category/:categoryName" render={ (props) =>
+        <Route path="/category/:categoryName" render={ ({match}) =>
           <div>
             In category:
-            {props.match.params.categoryName}
+            {match.params.categoryName}
           </div>
         } />
-        <Route path="/editor/:id?" render={(props) =>
-          <PostEditor postId={props.match.params.id}></PostEditor>
+        <Route path="/editor/:id?" render={({match}) =>
+          <PostEditor postId={match.params.id}></PostEditor>
         }/>
-        <Route path="/post/:id" render={(props) =>
+        <Route path="/post/:id" render={({match}) =>
           <div>
-            In post detail view for post {props.match.params.id}
+            In post detail view for post {match.params.id}
           </div>
         } />
       </div>

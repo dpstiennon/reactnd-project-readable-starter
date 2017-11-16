@@ -3,16 +3,18 @@ import React, {Component} from "react";
 import * as actions from '../actions/posts'
 import Post from '../models/post'
 import { withRouter } from 'react-router-dom'
+import {connect} from 'react-redux'
 
-export default class PostEditor extends Component {
-  handleSubmit = () => {
+class PostEditor extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault()
     this.props.dispatch(actions.savePost(new Post(
       this.author.value,
       this.title.value,
       this.bodyText.value,
       this.category.value
-    )));
-    withRouter.history.push('/')
+    )))
+    // withRouter.history.push('/')
   }
 
   render(){
@@ -54,3 +56,11 @@ export default class PostEditor extends Component {
     </form>
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return{
+    post: state.posts[ownProps.postId]
+  }
+}
+
+export default connect(mapStateToProps)(PostEditor)

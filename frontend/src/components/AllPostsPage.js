@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import CategoriesBar from "./CategoriesBar";
 import PostsSummary from "./PostsSummary";
 import {Link} from "react-router-dom";
+import { connect } from 'react-redux'
 
 class AllPostsPage extends Component {
 
@@ -15,4 +16,11 @@ class AllPostsPage extends Component {
   }
 }
 
-export default AllPostsPage
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts
+  }
+}
+
+export default connect(mapStateToProps)(AllPostsPage)
+
