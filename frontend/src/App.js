@@ -8,8 +8,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Route path="/" exact render={ () =>
-          <AllPostsPage/>
+        <Route path="/" exact render={ (props) =>
+          <AllPostsPage history={props.history}/>
         }/>
         <Route path="/category/:categoryName" render={ (props) =>
           <div>
@@ -18,7 +18,7 @@ class App extends Component {
           </div>
         } />
         <Route path="/editor/:id?" render={(props) =>
-          <PostEditor></PostEditor>
+          <PostEditor postId={props.match.params.id}></PostEditor>
         }/>
         <Route path="/post/:id" render={(props) =>
           <div>
