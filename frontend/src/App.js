@@ -17,8 +17,8 @@ class App extends Component {
             {match.params.categoryName}
           </div>
         } />
-        <Route path="/editor/:id?" render={({match}) =>
-          <PostEditor postId={match.params.id}></PostEditor>
+        <Route path="/editor/:id?" render={({match, history}) =>
+          <PostEditor postId={match.params.id} history={history}></PostEditor>
         }/>
         <Route path="/post/:id" render={({match}) =>
           <div>

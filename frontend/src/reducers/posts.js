@@ -1,5 +1,4 @@
 import * as actions from '../actions/posts'
-import idGenerator from '../utils/idGenerator'
 
 const initialState = {
   posts: [

@@ -2,7 +2,6 @@
 import React, {Component} from "react";
 import * as actions from '../actions/posts'
 import Post from '../models/post'
-import { withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
 
 class PostEditor extends Component {
@@ -14,7 +13,7 @@ class PostEditor extends Component {
       this.bodyText.value,
       this.category.value
     )))
-    // withRouter.history.push('/')
+    this.props.history.push('/')
   }
 
   render(){
