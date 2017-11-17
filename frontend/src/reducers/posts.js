@@ -1,6 +1,12 @@
 import * as actions from '../actions/posts'
 
 const initialState = {
+  categories : [
+    'Cheese',
+    'React Tips',
+    'Blog Topics'
+  ],
+  currentCategory: 'Cheese',
   posts: [
     {
       id: '123',

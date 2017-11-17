@@ -1,20 +1,15 @@
 
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
+import {connect} from 'react-redux'
 
 class CategoriesBar extends Component {
-  categories = [
-    'cheese',
-    'reacttips',
-    'jobapplications'
-  ];
-
-
 
   render(){
+    const {categories} = this.props
     return <div className="categories-bar">
       <h4>Categories</h4>
-      {this.categories.map(c =>
+      {categories.map(c =>
         <div className="category-link">
           <Link to={`/category/${c}`}>{c}</Link>
         </div>)}
@@ -22,4 +17,12 @@ class CategoriesBar extends Component {
   }
 }
 
-export default CategoriesBar
+const connectStateToProps = (state) => {
+  return {
+    categories: state.categories,
+    currentCategory: state.currentCategory
+  }
+}
+
+
+export default connect(connectStateToProps)(CategoriesBar)
