@@ -19,7 +19,7 @@ const initialState = {
       deleted: false
     },
     {
-      id: '123',
+      id: '456',
       timestamp: Date.now(),
       title: 'Star Wars',
       body: 'Miscellaneous ramblings about Star Wars fan theories',
@@ -29,7 +29,7 @@ const initialState = {
       deleted: false
     },
     {
-      id: '123',
+      id: '789',
       timestamp: Date.now(),
       title: 'My favorite cheeses',
       body: 'Cheddar, Gouda, and many others',
@@ -38,7 +38,8 @@ const initialState = {
       voteScore: 15,
       deleted: false
     }
-  ]
+  ],
+  comments: []
 };
 
 

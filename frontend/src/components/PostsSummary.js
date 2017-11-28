@@ -13,7 +13,7 @@ class PostsSummary extends Component {
       {this.props.posts.map(post => <div className="post row" onClick={() => this.gotoPostDetails(post.id)}>
         <div className="col-md-4">{post.author}</div>
         <div className="col-md-4">{post.title}</div>
-        <div className="col-md-4">{post.timestamp}</div>
+        <div className="col-md-4">Upvotes:{post.voteScore}</div>
       </div>)}
       </div>
   }

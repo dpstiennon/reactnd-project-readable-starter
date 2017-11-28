@@ -3,6 +3,7 @@ import './css/App.css';
 import {Route} from 'react-router-dom'
 import AllPostsPage from "./components/AllPostsPage";
 import PostEditor from "./components/PostEditor";
+import PostView from "./components/PostView"
 
 class App extends Component {
   render() {
@@ -21,9 +22,7 @@ class App extends Component {
           <PostEditor postId={match.params.id} history={history}></PostEditor>
         }/>
         <Route path="/post/:id" render={({match}) =>
-          <div>
-            In post detail view for post {match.params.id}
-          </div>
+          <PostView id={match.params.id}></PostView>
         } />
       </div>
     );
