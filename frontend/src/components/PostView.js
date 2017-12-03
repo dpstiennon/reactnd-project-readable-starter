@@ -18,7 +18,7 @@ class PostView extends Component {
         downvote={downvote}
         voteCount={post.voteScore}
       ></UpvoteWidget>
-      <Comments className="col-md-12"></Comments>
+      <Comments comments={comments} className="col-md-12"></Comments>
     </div>
 
   }
